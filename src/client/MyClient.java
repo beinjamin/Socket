@@ -20,7 +20,15 @@ public class MyClient {
 		 */
 		Scanner scanner=new Scanner(System.in);
 		System.out.print("Donner un nombre");
-
+		int nb=scanner.nextInt();
+		
+		System.out.println("J envoi le nombre " +nb+"au serveur");
+		os.write(nb);
+		
+		System.out.println("J attend la reponse du serve...");
+		int rep=is.read();
+		System.out.println("J envoi la reponse" +rep);
+	
 	}
 
 }
