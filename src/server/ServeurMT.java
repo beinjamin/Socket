@@ -17,7 +17,7 @@ public class ServeurMT extends Thread {
 			ServerSocket ss =new ServerSocket(1234);
 			while(true) {
 				Socket socket = ss.accept();
-				new Conversation().start();
+				new Conversation(socket).start();
 				
 				
 			}
@@ -30,6 +30,11 @@ public class ServeurMT extends Thread {
 	}
 	
 	class Conversation extends Thread{
+		private Socket socket;
+		public Conversation(Socket s) {
+			this.socket = s;
+			
+		}
 		public void run ()
 		{
 			
