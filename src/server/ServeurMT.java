@@ -10,6 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ServeurMT extends Thread {
+	private int nombreClient;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,6 +25,7 @@ public class ServeurMT extends Thread {
 			
 			while(true) {
 				Socket socket = ss.accept();
+				++nombreClient;
 				new Conversation(socket).start();
 				
 				
