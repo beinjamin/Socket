@@ -55,10 +55,15 @@ public class ServeurMT extends Thread {
 				
 				OutputStream os=socket.getOutputStream();
 				PrintWriter pw=new PrintWriter(os,true);
+				String IP=socket.getRemoteSocketAddress().toString();
+				System.out.println ("Connexion du client numero" +numeroClient );
+				
+				pw.println("Bienvenue vous etes le client numero" +numeroClient);
 				
 				
 				while(true) {
 					String req=br.readLine();
+					System.out.println("Le client avec l adresse IP " +IP+ " a envoyer une requette" +req);
 					pw.println(req.length());
 					
 				}
