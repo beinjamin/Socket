@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 public class MyServer {
 
 	public static void main(String[] args) {
-		ServerSocket ss=new ServerSocket();
+		ServerSocket ss=new ServerSocket(1234);
 
 	}
 
