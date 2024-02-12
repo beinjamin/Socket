@@ -12,7 +12,7 @@ public class MyServer {
 		try (ServerSocket ss = new ServerSocket(1234)) {
 			System.out.print("J attend une connexion...");
 			Socket s = ss.accept();
-			System.out.println("Connexion d un client"+s.getReuseAddress());
+			System.out.println("Connexion d un client" +s.getRemoteSocketAddress());
 			
 			InputStream is=s.getInputStream();
 			OutputStream os = s.getOutputStream();
