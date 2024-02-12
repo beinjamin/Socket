@@ -12,15 +12,16 @@ public class MyServer {
 		try (ServerSocket ss = new ServerSocket(1234)) {
 			System.out.print("J attend une connexion...");
 			Socket s = ss.accept();
+			System.out.println("Connexion d un client"+s.getReuseAddress());
 			
 			InputStream is=s.getInputStream();
 			OutputStream os = s.getOutputStream();
 			
-			System.out.print("J attend que le client envoi un octet");
+			System.out.print("J attend que le client envoi un nombre pourque je calcule son double");
 			int nb=is.read();
 			System.out.print("J ai recu un nombre " +nb);
 
-			int res=nb*5;
+			int res=nb*2;
 			System.out.print("J envoi la reponse" +res);
 
 			os.write(res);

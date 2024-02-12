@@ -19,7 +19,7 @@ public class MyClient {
 		 * Saisir les nombre ou clavier
 		 */
 		Scanner scanner=new Scanner(System.in);
-		System.out.print("Donner un nombre: ");
+		System.out.print("Donner un nombre QuelConque le server droit calculer son double ");
 		int nb=scanner.nextInt();
 		
 		System.out.println("J envoi le nombre " +nb+ " au serveur");
