@@ -17,6 +17,9 @@ public class ServeurMT extends Thread {
 			ServerSocket ss =new ServerSocket(1234);
 			while(true) {
 				Socket socket = ss.accept();
+				new Conversation().start();
+				
+				
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -24,6 +27,13 @@ public class ServeurMT extends Thread {
 		}
 		
 		
+	}
+	
+	class Conversation extends Thread{
+		public void run ()
+		{
+			
+		}
 	}
 
 }
